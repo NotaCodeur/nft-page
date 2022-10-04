@@ -23,7 +23,7 @@ const Hero = () => {
                 <p>
                     Wireframe is a template React js Cardano NFT site.
                     You can copy the code from github to get your own project going.
-                    The site uses NMKR.io to mint the NFT's on the Cardano Blockchain.
+                    You can use the site with NMKR.io to mint NFT's on the Cardano Blockchain.
                 </p>
                 <br />
                 <br />
