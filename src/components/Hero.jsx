@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import { Col, Row, Card, Button, Input, List, Typography } from 'antd';
 import heroImage from '../images/heroImage.png'
 import Wireframe1 from '../images/Wireframe1.png'
+import WireframeTrans from '../images/WireframeTrans.png'
 
 const { Title } = Typography;
 
@@ -13,7 +14,7 @@ const Hero = () => {
             <Col xs={24} sm={8} md={8} lg={8} xl={8}>
                 <div >
 
-                    <img src={Wireframe1} alt="heroImage" style={{ height: '10%', width: '100%', padding: '20px' }} />
+                    <img src={WireframeTrans} alt="heroImage" style={{ height: '10%', width: '100%', padding: '20px' }} />
                 </div>
             </Col>
             <Col xs={22} sm={8} md={8} lg={8} xl={8}>
