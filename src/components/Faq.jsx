@@ -21,16 +21,16 @@ const Faq = () => {
 
 
               <Collapse accordion>
-                <Panel header="How many unique NFT's are there" key="1">
+                <Panel header="How many unique NFT's are there?" key="1">
                   <p>{text}</p>
                 </Panel>
-                <Panel header="How do I buy an NFT" key="2">
+                <Panel header="How do I buy an NFT?" key="2">
                   <p>{text}</p>
                 </Panel>
-                <Panel header="What is an NFT" key="3">
+                <Panel header="What is an NFT?" key="3">
                   <p>{text}</p>
                 </Panel>
-                <Panel header="Where can I sell the NFT" key="4">
+                <Panel header="Where can I sell the NFT?" key="4">
                   <p>{text}</p>
                 </Panel>
               </Collapse>
