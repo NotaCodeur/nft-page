@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../logo.svg';
 import { Col, Row, Card, Button, Input, List, Typography } from 'antd';
 import heroImage from '../images/heroImage.png'
+import Wireframe1 from '../images/Wireframe1.png'
 
 const { Title } = Typography;
 
@@ -12,20 +13,43 @@ const Hero = () => {
             <Col xs={24} sm={8} md={8} lg={8} xl={8}>
                 <div >
 
-                    <img src={heroImage} alt="heroImage" style={{ height: '10%', width: '100%', padding: '20px' }} />
+                    <img src={Wireframe1} alt="heroImage" style={{ height: '10%', width: '100%', padding: '20px' }} />
                 </div>
             </Col>
             <Col xs={22} sm={8} md={8} lg={8} xl={8}>
-                <Title>Super Bull</Title>
+                <Title>Wireframe</Title>
+                <br />
+                <br />
                 <p>
-                    SuperBull is a gaming and utility focused project on the Cardano Blockchain.
-
-                    We believe that the technology behind Cardano has enormous potential to create amazing applications and experiences for NFTs. Join our amazing community and explore the endless possibilities together!
+                    Wireframe is a template React js Cardano NFT site.
+                    You can copy the code from github to get your own project going.
+                    The site uses NMKR.io to mint the NFT's on the Cardano Blockchain.
                 </p>
+                <br />
+                <br />
 
                 <Button block={true}>
                     Call To Action !
                 </Button>
+                {/* <Row align='center' justify='center'>
+                    <Col span={24} align='center' style={{
+                        position: 'absolute',
+                        bottom: 20,
+                        zIndex: 1,
+                        transition: 'all 0.2s',
+                    }}>
+                        <Row
+                            className='createListBottomRow'
+                            gutter={[20, 20]}
+                            justify='center'
+                        >
+                            <Col span={24}  align='center'>
+                                <Button block={true}>Call To Action !</Button>
+                            </Col>
+                        </Row>
+                    </Col>
+
+                </Row> */}
             </Col>
         </Row>
     )

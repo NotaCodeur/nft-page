@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import { Col, Row, Card, Button, Input, List, Divider, Space, Dropdown } from 'antd';
-import bullLogo from '../images/bullLogo.png'
 import { Link } from 'react-router-dom';
 import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined, DownOutlined  } from '@ant-design/icons/lib/icons';
+import bullLogo from '../images/bullLogo.png'
+import WireframeLogoTransparent from '../images/WireframeLogoTransparent.png'
 
 const { Header, Content, Footer } = Layout;
 
@@ -88,7 +89,7 @@ const HeaderSection = () => {
                     <Col xs={22} sm={22} md={22} lg={20} xl={20}>
                         <Row justify="space-between" align="middle">
                             <Col >
-                                <img src={bullLogo} className="logo" alt="logo" />
+                                <img src={WireframeLogoTransparent} className="logo" alt="logo" />
                             </Col>
                             <Col >
                                 <div style={{ height: '100%', alignContent: 'middle' }}>

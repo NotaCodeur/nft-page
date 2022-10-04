@@ -17,7 +17,7 @@ const Team = () => {
                 <Meta
                   avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
                   title="Joe Random"
-                  description="CEO of NFT Corp."
+                  description="CEO of imaginary NFT Corp."
                 >
                 </Meta>
               </Card>
@@ -36,7 +36,7 @@ const Team = () => {
               <Card style={{ padding: '20px' }}>
                 <Meta
                   avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                  title="Lisa Asil"
+                  title="Dory Forgetful"
                   description="Hogwards graduate, Art director."
                 >
                 </Meta>
@@ -46,7 +46,7 @@ const Team = () => {
               <Card style={{ padding: '20px' }}>
                 <Meta
                   avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                  title="Evelyn Rosewood"
+                  title="Marlin Neverfound"
                   description="5 years experience, Chief of Marketing."
                 >
                 </Meta>
