@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect, Component, useMemo, useCallback, useReducer, useRef } from 'react'
 import logo from '../logo.svg';
 import { Col, Row, Card, Button, Input, List, Typography } from 'antd';
 import heroImage from '../images/heroImage.png'
 import Wireframe1 from '../images/Wireframe1.png'
-import WireframeTrans from '../images/WireframeTrans.png'
+import WireframeTrans3 from '../images/WireframeTrans3.png'
 
 const { Title } = Typography;
 
 
-const Hero = () => {
+const Hero = ({state, dispatch}) => {
+    const hero = useRef(null);
+    
+    useEffect(() => {
+        if (hero !== state.refs.hero) {
+            dispatch({ type: 'setRefs', payload: { ...state.refs, 'hero': hero } })
+        }
+    }, [state])
+
     return (
-        <Row gutter={[40, 40]} justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
-            <Col xs={24} sm={8} md={8} lg={8} xl={8}>
+        <Row ref={hero} className='heroSection' justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
+            <Col xs={22} sm={8} md={8} lg={8} xl={8}>
                 <div >
 
-                    <img src={WireframeTrans} alt="heroImage" style={{ height: '10%', width: '100%', padding: '20px' }} />
+                    <img src={WireframeTrans3} alt="heroImage" style={{ height: '10%', width: '100%', padding: '20px' }} />
                 </div>
             </Col>
             <Col xs={22} sm={8} md={8} lg={8} xl={8}>

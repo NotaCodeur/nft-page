@@ -1,5 +1,5 @@
 import { Collapse, Row, Col, Typography } from 'antd';
-import React from 'react';
+import React, { useState, useEffect, Component, useMemo, useCallback, useReducer, useRef } from 'react'
 const { Panel } = Collapse;
 const { Title } = Typography;
 
@@ -9,10 +9,21 @@ const text = `
   it can be found as a welcome guest in many households across the world.
 `;
 
-const Faq = () => {
+const Faq = ({state, dispatch}) => {
+
+
+  const faq = useRef();
+
+  useEffect(() => {
+    if (faq !== state.refs.faq) {
+        dispatch({ type: 'setRefs', payload: { ...state.refs, 'faq': faq } })
+    }
+}, [state])
+
+
   return (
     <>
-      <Row justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
+      <Row ref={faq} className='faqSection' justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
         <Col xs={22} sm={22} md={22} lg={20} xl={20}>
           <Title level={5}>Faq</Title>
 

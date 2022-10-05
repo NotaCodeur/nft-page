@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Breadcrumb, Layout, Menu } from 'antd';
-import { Col, Row, Card, Button, Input, List, Divider, Space, Dropdown } from 'antd';
-import { Link } from 'react-router-dom';
-import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined, DownOutlined  } from '@ant-design/icons/lib/icons';
+import { Col, Row, Card, Button, Input, List, Divider, Space, Dropdown, Anchor } from 'antd';
+import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined, DownOutlined } from '@ant-design/icons/lib/icons';
 import bullLogo from '../images/bullLogo.png'
 import WireframeLogoTransparent from '../images/WireframeLogoTransparent.png'
+import Roadmap from './Roadmap';
+import { Link } from 'react-router-dom';
+
 
 const { Header, Content, Footer } = Layout;
 
-const HeaderSection = () => {
+const HeaderSection = ({ state, dispatch }) => {
     const [activeMenu, setActiveMenu] = useState(true);
     const [screenSize, setScreenSize] = useState(null);
 
@@ -36,23 +38,23 @@ const HeaderSection = () => {
         <Menu
             items={[
                 {
-                    label: <a href="https://www.antgroup.com">About</a>,
+                    label: <a href="#hero" onClick={() => scrollToSection(state.refs.hero)}>Top</a>,
                     key: '0',
                 },
                 {
-                    label: <a href="">Art</a>,
+                    label: <a onClick={() => scrollToSection(state.refs.roadmap)}>Roadmap</a>,
                     key: '1',
                 },
                 {
-                    label: <a href="">Roadmap</a>,
+                    label: <a onClick={() => scrollToSection(state.refs.art)}>Art</a>,
                     key: '2',
                 },
                 {
-                    label: <a href="">Team</a>,
+                    label: <a onClick={() => scrollToSection(state.refs.team)}>Team</a>,
                     key: '3',
                 },
                 {
-                    label: <a href="">Faq</a>,
+                    label: <a onClick={() => scrollToSection(state.refs.faq)}>Faq</a>,
                     key: '4 ',
                 },
                 {
@@ -65,6 +67,18 @@ const HeaderSection = () => {
             ]}
         />
     );
+
+    const scrollToSection = (elementRef) => {
+        // console.log('elementRef', elementRef)
+        if (elementRef?.current) {
+
+            window.scrollTo({
+                top: elementRef.current.offsetTop,
+                behavior: "smooth",
+            })
+        }
+    }
+
 
     return (
         // <Header>
@@ -89,14 +103,16 @@ const HeaderSection = () => {
                     <Col xs={22} sm={22} md={22} lg={20} xl={20}>
                         <Row justify="space-between" align="middle">
                             <Col >
-                                <img src={WireframeLogoTransparent} className="logo" alt="logo" />
+                                <Link to='/'>
+                                    <img src={WireframeLogoTransparent} className="logo" alt="logo" />
+                                </Link>
                             </Col>
                             <Col >
                                 <div style={{ height: '100%', alignContent: 'middle' }}>
                                     {activeMenu ? (
 
                                         <Dropdown overlay={menu} trigger={['click']} >
-                                            <a onClick={(e) => e.preventDefault()}>
+                                            <a onClick={(e) => { e.preventDefault() }}>
                                                 <Space>
                                                     Menu
                                                     <DownOutlined />
@@ -104,13 +120,28 @@ const HeaderSection = () => {
                                             </a>
                                         </Dropdown>
 
-                                    ) 
-                                    : activeMenu === false ? (
-                                    <Button className='menu-control-container' onClick={() => setActiveMenu(!activeMenu)}>
-                                        <MenuOutlined />
-                                    </Button>
+                                    )
+                                        : activeMenu === false ? (
+                                            <Row>
+                                                {/* <Anchor>
+                                                    <Link href="#heroSection" title="Basic demo" />
+                                                    <Link href="#roadmapSection" title="Roadmap" />
+                                                    <Link href="#artSection" title="API">
+                                                        <Link href="#teamSection" title="Anchor Props" />
+                                                        <Link href="#faqSection" title="Link Props" />
+                                                    </Link>
+                                                </Anchor> */}
+                                                <Dropdown overlay={menu} trigger={['click']} >
+                                                    <a onClick={(e) => { e.preventDefault() }}>
+                                                        <Space>
+                                                            Menu
+                                                            <DownOutlined />
+                                                        </Space>
+                                                    </a>
+                                                </Dropdown>
+                                            </Row>
 
-                                    ) : null
+                                        ) : null
                                     }
                                 </div>
                             </Col>

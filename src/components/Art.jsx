@@ -1,5 +1,5 @@
 import { Carousel, Row, Col, Card, Typography } from 'antd';
-import React from 'react';
+import React, { useState, useEffect, Component, useMemo, useCallback, useReducer, useRef } from 'react'
 const { Title } = Typography;
 
 const contentStyle = {
@@ -10,10 +10,22 @@ const contentStyle = {
   background: '#364d79',
 };
 const { Meta } = Card;
-const Art = () => {
+
+
+const Art = ({state, dispatch}) => {
+    
+  const art = useRef();
+
+  useEffect(() => {
+    if (art !== state.refs.art) {
+        dispatch({ type: 'setRefs', payload: { ...state.refs, 'art': art } })
+    }
+}, [state])
+
+
   return (
     <>
-      <Row justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
+      <Row ref={art} className='artSection' justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
         <Col xs={24} sm={24} md={24} lg={20} xl={20}>
           <Title level={5}>Art</Title>
           <Row justify='center'>

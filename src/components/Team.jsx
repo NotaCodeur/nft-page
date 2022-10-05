@@ -1,14 +1,24 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Carousel, Row, Col, Card, Typography, Avatar } from 'antd';
-import React from 'react';
+import React, { useState, useEffect, Component, useMemo, useCallback, useReducer, useRef } from 'react'
 const { Title, Text } = Typography;
 const { Meta } = Card;
 
 
-const Team = () => {
+const Team = ({state, dispatch}) => {
+
+
+  const team = useRef();
+
+  useEffect(() => {
+    if (team !== state.refs.team) {
+        dispatch({ type: 'setRefs', payload: { ...state.refs, 'team': team } })
+    }
+}, [state])
+
   return (
     <>
-      <Row justify="center" style={{ paddingTop: '100px', paddingBottom: '50px', }}>
+      <Row ref={team} className='teamSection' justify="center" style={{ paddingTop: '100px', paddingBottom: '50px', }}>
         <Col xs={22} sm={22} md={22} lg={20} xl={20}>
           <Title level={5}>Team</Title>
           <Row gutters={[40, 40]} justify="center">

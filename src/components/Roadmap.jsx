@@ -1,10 +1,10 @@
 import { Divider, Steps, Row, Col, Typography } from 'antd';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 const { Step } = Steps;
 const { Title } = Typography;
 
 
-const Roadmap = () => {
+const Roadmap = ({state, dispatch}) => {
   const [current, setCurrent] = useState(0);
 
   const onChange = (value) => {
@@ -12,9 +12,19 @@ const Roadmap = () => {
     setCurrent(value);
   };
 
+  
+  const roadmap = useRef();
+
+  useEffect(() => {
+    if (roadmap !== state.refs.roadmap) {
+        dispatch({ type: 'setRefs', payload: { ...state.refs, 'roadmap': roadmap } })
+    }
+}, [state])
+
+
   return (
     <>
-      <Row justify="center" style={{ paddingTop: '100px', paddingBottom: '100px', }}>
+      <Row ref={roadmap} className='roadmapSection' justify="center" style={{ paddingTop: '100px', paddingBottom: '100px', }}>
         <Col xs={22} sm={22} md={22} lg={20} xl={20}>
 
 
@@ -29,6 +39,7 @@ const Roadmap = () => {
               </Steps>
 
               <Divider />
+
 
               <Steps current={current} onChange={onChange} direction="vertical">
                 <Step title="Step 1" description="This is a description." />
