@@ -61,8 +61,9 @@ const Art = ({ state, dispatch }) => {
     } else if (screenSize < 1500) {
       setActiveArt(4);
       setArtSize('20vw');
-    } else if (screenSize < 1800) {
+    } else if (screenSize > 1500) {
       setActiveArt(5);
+      setArtSize('20vw');
     }
   }, [screenSize]);
 
