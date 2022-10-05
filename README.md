@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# NFT page
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project uses "react-router-dom": "5.3" (see package.json)
+
+This project uses Antdesign, you can copy any paste UI components from https://ant.design/components/ .
+
+
 
 ## Available Scripts
 

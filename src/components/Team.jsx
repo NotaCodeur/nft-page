@@ -20,8 +20,8 @@ const Team = ({state, dispatch}) => {
     <>
       <Row ref={team} className='teamSection' justify="center" style={{ paddingTop: '100px', paddingBottom: '50px', }}>
         <Col xs={22} sm={22} md={22} lg={20} xl={20}>
-          <Title level={5}>Team</Title>
-          <Row gutters={[40, 40]} justify="center">
+          <Title level={2}>Team</Title>
+          <Row gutters={[40, 40]} justify="center" style={{paddingTop: 60}}>
             <Col xs={24} sm={12} md={12} lg={12} xl={12} >
               <Card style={{ padding: '20px' }}>
                 <Meta

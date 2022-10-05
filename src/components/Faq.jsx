@@ -25,9 +25,9 @@ const Faq = ({state, dispatch}) => {
     <>
       <Row ref={faq} className='faqSection' justify='center' style={{ paddingTop: '100px', paddingBottom: '100px', }}>
         <Col xs={22} sm={22} md={22} lg={20} xl={20}>
-          <Title level={5}>Faq</Title>
+          <Title level={2}>Faq</Title>
 
-          <Row justify='center' >
+          <Row justify='center' style={{paddingTop: 60}} >
             <Col span={24}>
 
 

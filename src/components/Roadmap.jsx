@@ -24,15 +24,15 @@ const Roadmap = ({state, dispatch}) => {
 
   return (
     <>
-      <Row ref={roadmap} className='roadmapSection' justify="center" style={{ paddingTop: '100px', paddingBottom: '100px', }}>
+      <Row ref={roadmap} className='roadmapSection' justify="center" style={{ paddingTop: '100px', paddingBottom: '50px', }}>
         <Col xs={22} sm={22} md={22} lg={20} xl={20}>
 
 
-          <Title level={5}>Roadmap</Title>
+          <Title level={2}>Roadmap</Title>
 
           <Row justify="center">
             <Col span={24}>
-              <Steps current={current} onChange={onChange}>
+              <Steps current={current} onChange={onChange} style={{paddingTop: 60}}>
                 <Step title="Step 1" description="This is a description." />
                 <Step title="Step 2" description="This is a description." />
                 <Step title="Step 3" description="This is a description." />
